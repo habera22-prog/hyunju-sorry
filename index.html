@@ -6,8 +6,11 @@
   <title>현주야 미안해</title>
 
   <meta property="og:title" content="현주야 미안해" />
-  <meta property="og:description" content="한 번만 눌러줘. 내 마음을 담았어." />
+  <meta property="og:description" content="한 번만 눌러줘. 내 마음을 담아 보냈어." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://habera22-prog.github.io/hyunju-sorry/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <style>
     * { box-sizing: border-box; }
@@ -18,7 +21,7 @@
       overflow: hidden;
       font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
       background:
-        radial-gradient(circle at top, rgba(255,255,255,0.9), transparent 35%),
+        radial-gradient(circle at top, rgba(255,255,255,0.95), transparent 35%),
         linear-gradient(180deg, #fff8fb 0%, #ffe8f0 55%, #ffdbe8 100%);
       display: flex;
       justify-content: center;
@@ -27,9 +30,24 @@
       color: #5b2b3a;
     }
 
+    .glow {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(255, 140, 180, 0.22), transparent 65%);
+      border-radius: 999px;
+      z-index: 0;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.12); opacity: 0.55; }
+    }
+
     .card {
-      width: min(90vw, 420px);
-      padding: 28px 22px 34px;
+      width: min(90vw, 430px);
+      padding: 30px 24px 36px;
       border-radius: 28px;
       background: rgba(255,255,255,0.78);
       backdrop-filter: blur(10px);
@@ -40,7 +58,7 @@
     }
 
     .emoji {
-      font-size: 40px;
+      font-size: 42px;
       margin-bottom: 8px;
       animation: bob 2.4s ease-in-out infinite;
     }
@@ -85,7 +103,7 @@
     }
 
     .message-wrap {
-      min-height: 110px;
+      min-height: 120px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -105,7 +123,7 @@
     }
 
     .main-text {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 800;
       color: #d6336c;
       line-height: 1.35;
@@ -116,7 +134,13 @@
     .small-text {
       font-size: 15px;
       color: #7d5663;
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 12px;
+      color: #a17784;
     }
 
     .heart {
@@ -144,27 +168,6 @@
         opacity: 0;
       }
     }
-
-    .glow {
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      background: radial-gradient(circle, rgba(255, 140, 180, 0.18), transparent 65%);
-      border-radius: 999px;
-      z-index: 0;
-      animation: pulse 3s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.9; }
-      50% { transform: scale(1.12); opacity: 0.55; }
-    }
-
-    .footer-note {
-      margin-top: 18px;
-      font-size: 12px;
-      color: #a17784;
-    }
   </style>
 </head>
 <body>
@@ -180,7 +183,10 @@
     <div class="message-wrap">
       <div class="message" id="messageBox">
         <div class="main-text">현주야 미안해</div>
-        <div class="small-text">진심으로 사과하고 싶었어.<br>내 마음이 전해졌으면 좋겠어.</div>
+        <div class="small-text">
+          진심으로 사과하고 싶었어.<br>
+          내 마음이 전해졌으면 좋겠어.
+        </div>
       </div>
     </div>
 
